@@ -2,7 +2,8 @@ var express = require("express");
 let app = express(),
   port = 3001,
   mongoose = require("mongoose");
-(bodyParser = require("body-parser")), (multer = require("multer"));
+(bodyParser = require("body-parser")), 
+
 (users = require("./moules/UsersModel")),
   //   (groups = require("./api/models/groupModel")),
   //   (payMethod = require("./api/models/payMethodModel")),
@@ -17,7 +18,7 @@ let app = express(),
   // mongoose.connect("mongodb://localhost/lyncpay"); // live
   // mongoose.connect("mongodb://localhost/lyncpay", { useMongoClient: true }); // local
 
-  mongoose.connect("mongodb://localhost/lyncpayServer");
+  mongoose.connect("mongodb://localhost/docpatient");
 
 // mongoose.connect('mongodb://localhost:27017/lyncpay',
 //   {

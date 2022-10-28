@@ -1,10 +1,10 @@
 "use strict";
-errors = ["", null, undefined];
 
 //modules
 var mongoose = require("mongoose"),
   path = require("path"),
   passwordHash = require("password-hash");
+const errors = ["", null, undefined];
 
 //tables
 var OTPTable = mongoose.model("OTP"),
@@ -28,15 +28,15 @@ async function SignUp(req, res, next) {
     // console.log(user);
     let data = await user.save();
     console.log(data);
-    const token = jwt.sign({ user_id: data._id }, process.env.TOKEN_KEY, {
-      expiresIn: "365d",
-    });
-    console.log(token);
-    data.token = token;
+    // const token = jwt.sign({ user_id: data._id }, process.env.TOKEN_KEY, {
+    //   expiresIn: "365d",
+    // });
+    // console.log(token);
+    // data.token = token;
     res.status(200).json({
       status: true,
       data: data,
-      token: token,
+     
     });
   } catch (err) {
     console.log("error, 330", err);
